@@ -1,3 +1,6 @@
+import {NavLink} from "react-router-dom";
+import "./Header.css"
+
 function Header({ title, menu }) {
 
   return (
@@ -9,7 +12,7 @@ function Header({ title, menu }) {
             {
               menu.map((item, index) => (
                 <li key={index} className="me-2">
-                  <a href={item.path}>{item.label}</a>
+                  <NavLink  to={item.path} className={({isActive}) => isActive ? 'nav-link active': 'nav-link'}>{item.label}</NavLink>
                 </li>
               ))
             }
