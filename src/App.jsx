@@ -2,6 +2,7 @@ import './App.css'
 import Header from "./components/Header.jsx";
 import Steps from "./components/Steps.jsx";
 import {useEffect, useState} from "react";
+import DateCounter from "./components/DateCounter.jsx";
 
 function App() {
   const menu = [
@@ -60,13 +61,15 @@ function App() {
         </button>
       </div>
       {isOpen && (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mb-5">
           <Steps steps={steps} current={currentStep}/>
           <p className="p-4 bg-gray-300 rounded mb-5">Current step: {currentStep}</p>
           <button className="bg-indigo-700 text-white py-2 px-5 rounded me-2" onClick={onPrevious}>Previous</button>
           <button className="bg-indigo-700 text-white py-2 px-5 rounded" onClick={onNext}>Next</button>
         </div>
       )}
+
+      <DateCounter/>
     </>
   )
 }
