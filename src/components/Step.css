@@ -1,0 +1,7 @@
+.step {
+    @apply w-8 h-8 rounded-full bg-green-800 text-white flex justify-center items-center;
+}
+
+.step.active {
+    @apply bg-blue-600;
+}
