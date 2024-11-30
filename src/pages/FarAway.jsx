@@ -30,16 +30,34 @@ export default function FarAway() {
       packed: false
     }
   ]);
-
+  
   const handleAddItem = (newItem) => {
     setItems([...items, newItem]);
+  }
+
+  const handleDeleteItem = (id) => {
+    setItems(items => items.filter(item => item.id !== id));
+  }
+
+  const handleTogglePack = (id) => {
+    setItems(items => items.map(item =>
+      item.id === id
+        ? {...item, packed:!item.packed }
+        : item
+    ));
+  }
+
+  const handleClear = () => {
+    const confirm = window.confirm('Are you sure you want to clear the list?');
+    if (!confirm) return;
+    setItems([]);
   }
 
   return (
     <>
       <Form addItem={handleAddItem}/>
-      <PackingList items={items}/>
-      <Stats/>
+      <PackingList items={items} onDeleteItem={handleDeleteItem} onTogglePack={handleTogglePack} onClearList={handleClear}/>
+      <Stats items={items}/>
     </>
   )
 }
