@@ -2,6 +2,7 @@ import Steps from "../components/Steps.jsx";
 import DateCounter from "../components/DateCounter.jsx";
 import {useEffect, useState} from "react";
 import Button from "../components/Button.jsx";
+import StepMessage from "../components/StepMeaasge.jsx";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(true);
@@ -56,6 +57,9 @@ export default function Home() {
         <div className="container mx-auto px-4 mb-5">
           <Steps steps={steps} current={currentStep}/>
           <p className="p-4 bg-gray-300 rounded mb-5">Current step: {currentStep}</p>
+          <StepMessage step={currentStep}>
+            Lorem ipsum dolor.
+          </StepMessage>
           <Button className="me-2" onClick={onPrevious}>Previous</Button>
           {/*<button className="bg-indigo-700 text-white py-2 px-5 rounded me-2" onClick={onPrevious}>Previous</button>*/}
           <button className="bg-indigo-700 text-white py-2 px-5 rounded" onClick={onNext}>Next</button>
