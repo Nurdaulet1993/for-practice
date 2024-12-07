@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import FarAway from "./pages/FarAway.jsx";
 import Examples from "./pages/Examples.jsx";
+import Movies from "./pages/Movies.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: 'far-away',
         element: <FarAway/>
+      },
+      {
+        path: 'movies',
+        element: <Movies/>
       }
     ]
   },

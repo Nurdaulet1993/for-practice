@@ -2,10 +2,13 @@ import './App.css'
 import Header from "./components/Header.jsx";
 import { Outlet } from "react-router-dom";
 
+
+
 function App() {
   const menu = [
     { label: 'Home', path: '/' },
-    { label: 'FarAway', path: '/far-away' }
+    { label: 'FarAway', path: '/far-away' },
+    { label: 'Movies', path: '/movies' },
   ]
 
   return (
